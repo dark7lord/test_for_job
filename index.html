@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LevelUp</title>
+  <link rel="shortcut icon" href="img/prod.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 </head>
@@ -12,7 +13,10 @@
   <main class="main">
     <h1 class="visually-hidden">LevelUp</h1>
     <section class="promo wrapper">
-      <h2 class="promo__title">LevelUp. Продукт для повышения потенциала.</h1>
+      <h2 class="promo__title">
+        LevelUp.
+        <span>Продукт для повышения потенциала.</span>
+      </h1>
       <img src="img/prod.png" alt=" Баночка 'Levelup" class="promo__img">
       <ul class="promo__list">
         <li class="promo__list-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptate exercitationem ratione quisquam laboriosam velit, architecto quam quod officiis nam!</li>
@@ -20,7 +24,8 @@
         <li class="promo__list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolore repellat placeat quo natus inventore illo ullam est consectetur beatae!</li>
       </ul>
       <a href="#feedback" class="promo__link">Заказать</a>
-      <video class="promo__bg-video" autoplay loop>
+      <video class="promo__bg-video" 
+        autoplay loop autoplay="autoplay" loop="loop">
         <source type="video/mp4" src="img/red.mp4" >
       </video>
     </section>
@@ -98,10 +103,10 @@
     </section>
 
     <section class="info wrapper">
-      <h2>A little about the product</h2>
+      <h2>Немного о продукте</h2>
       <img src="img/doctor_n_photoshop.png" alt="doctor_n_photoshop">
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora eligendi unde, quibusdam voluptates provident perspiciatis? Quibusdam voluptas delectus cumque impedit, expedita aspernatur recusandae facilis adipisci eveniet doloremque suscipit odit assumenda quidem sed accusamus beatae reiciendis quos cum explicabo voluptate similique ullam. Repellat debitis dolores, exercitationem voluptas tempore inventore asperiores laborum quae officia impedit illo totam eaque molestiae iste, voluptatibus facere itaque placeat ullam in officiis. Hic ab, quis optio iure ipsam facilis excepturi repellendus consequuntur qui fuga cupiditate adipisci fugit doloremque dicta maiores officia eum neque ex quos numquam reiciendis quasi velit. Accusamus, mollitia inventore nemo doloremque voluptatem obcaecati placeat qui nobis quis totam blanditiis ducimus nulla velit error corporis quaerat magnam. Itaque eos eaque laboriosam nobis voluptas praesentium ea mollitia saepe, totam delectus quasi dolor obcaecati commodi ab iusto sunt quisquam repellat, doloribus quam sapiente molestias odit nostrum? Dicta non voluptatibus minima, sequi et modi esse dignissimos? Adipisci, voluptas.
+        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Живет свое повстречался она запятой даже ты свой, приставка имени семантика запятых грустный прямо наш океана, пояс которое единственное свою одна взобравшись назад. Текстами, вопрос первую большой маленький имеет власти лучше меня дал запятых толку подзаголовок агентство, над своих родного решила языкового живет что раз алфавит переписали дороге, злых рукописи его? Проектах безорфографичный по всей страна вершину единственное, дороге предупредила о текста всеми щеке возвращайся, ручеек жизни? Вершину осталось даль, повстречался реторический которое переписали всеми щеке. Алфавит семь предложения рот точках, моей его переулка силуэт, дал взгляд великий себя своих, обеспечивает встретил проектах решила журчит? Которое мир оксмокс путь рукопись снова рекламных на берегу своих меня, рот даже, продолжил великий если? Щеке языкового своих текстами грустный домах! Предложения встретил деревни там что эта подзаголовок вдали единственное не рыбного свой они рукопись повстречался правилами за сбить языком буквоград, грустный однажды необходимыми! Над, на берегу.
       </p>
 
       <ul class="info__list">
@@ -113,26 +118,38 @@
     </section>
 
     <section id="feedback" class="feedback wrapper">
-      <h2>LevelUp</h2>
-      <p>
-        
+      <h2>
+        LevelUp.
+        <span>Средство для увеличения потенциала</span>
+      </h2>
+      <div class="feedback__timer">
+        Осталось <span id="timer">0:30:00</span> от акции
+      </div>
+      <p class="feedback__price">
+        <span class="feedback__price--old">$1 000</span>
+        <span class="feedback__price--new">$10</span>
       </p>
+      <form action="#" method="get">
+        <fieldset>
+          <label>
+            <input type="text" name="name" id="name" placeholder="Имя" required>
+            <span>(пример: Иван)</span> 
+          </label>
+          <label>
+            <input type="number" name="phone" id="phone" placeholder="Телефон" max="11" min="11" required>
+            <span>(пример: 8 (800) 000 00 00)</span> 
+          </label>
+          <button type="submit">Заказать</button>
+        </fieldset>
+        <div class="feedback__promt">
+          <p></p>
+        </div>
+      </form>
     </section>
   </main>
 
   <script type="module" src="./js/swiper.bundle.js"></script>
-  <script type="module">
-    
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    });
-  </script>
+  <script type="module" src="./js/swiper.js"></script>
+  <script src="./js/timer.js"></script>
 </body>
 </html>

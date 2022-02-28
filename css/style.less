@@ -43,8 +43,9 @@ input[type="radio"].visually-hidden {
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: lightgray;
   margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -53,20 +54,28 @@ body {
 	min-width: @mobile-width-min;
   max-width: @mobile-width-max;
   box-sizing: border-box;
-  outline: 1px solid red;
+  outline: 1px solid grey;
+
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  p {
+    font: 16px/1.5 'Open Sans';
+    text-align: justify;
+  }
 
   @media (min-width: @tablet) {
     min-width: @tablet-width-min;
     max-width: @tablet-width-max;
     padding: 20px 30px;
-    outline: 1px solid greenyellow;
   }
 
   @media (min-width: @desktop) {
     min-width: @desktop-width-min;
     max-width: @desktop-width-max;
     padding: 20px 60px;
-    outline: 1px solid blue;
   }
 }
 
@@ -96,21 +105,22 @@ body {
   
   .promo__title {
     width: 100%;
-    border: 1px solid black;
     padding: 0 20px;
-    margin-top: 0;
     margin-bottom: 20px;
+    margin: 40px auto 60px;;
     
-    font: bold 18px / 26px sans-serif;
-    color: yellow;
-    text-shadow: 2px 2px 3px rgba(black, 0.5);
     text-align: center;
+
+    span {
+      font-size: smaller;
+      font-weight: normal;
+    }
   }
   
   .promo__img {
     width: calc(50% - 20px);
     max-width: 200px;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-right: 20px;
   }
   
@@ -120,7 +130,7 @@ body {
     align-self: stretch;
     margin-left: 20px;
     margin: 0;
-    border: 1px solid black;
+    // border: 1px solid black;
     
     font-size: 20px;
     list-style: square;
@@ -174,6 +184,7 @@ body {
   @media (min-width: @desktop) {
     .promo__title {
       font-size: 60px;
+      margin-bottom: 60px;
     }
     .promo__img {
       max-width: 400px;
@@ -507,4 +518,141 @@ body {
   }
 }
 
+.feedback {
+  background-image: url("../img/bgc_2.jpg");
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 60px;
 
+  h2 {
+    margin-top: 0;
+    font-size: 40px;
+    text-align: center;
+
+    span {
+      font-size: 25px;
+      font-weight: normal;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .feedback__timer {
+    font-size: 50px;
+  }
+
+  .feedback__price {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 20px 50px;
+    margin: 30px auto;
+    border: 1px solid red;
+    justify-content: center;
+    border-radius: 20px;
+
+    font-size: 30px;
+    &--old {
+      text-decoration: line-through;
+      opacity: 0.8;
+    }
+
+    &--new {
+      font-size: 170%;
+      animation: blink 2s linear 3s infinite;
+    }
+  }
+}
+
+.feedback form {
+  margin: auto;
+  display: flex;
+  
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    border-radius: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 18px 22px 14px;
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 700;
+    font: inherit;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: white;
+      background-color: rgba(grey, 0.3);
+      border-color: white;
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 17px 14px;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: black;
+      color: white;
+      transition: 0.3s;
+    }
+  }
+
+}
+
+.feedback label {
+  position: relative;
+}
+
+.feedback label > span {
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  right: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.feedback input:focus {
+  & + span {
+    display: block;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

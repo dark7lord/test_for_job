@@ -51,8 +51,9 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 body {
-  background-color: antiquewhite;
+  background-color: lightgray;
   margin: 0;
+  padding: 0;
 }
 .wrapper {
   padding: 0 15px;
@@ -60,14 +61,21 @@ body {
   min-width: var(--mobile-width-min);
   max-width: var(--mobile-width-max);
   box-sizing: border-box;
-  outline: 1px solid red;
+  outline: 1px solid grey;
+}
+.wrapper h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.wrapper p {
+  font: 16px/1.5 'Open Sans';
+  text-align: justify;
 }
 @media (min-width: 768px) {
   .wrapper {
     min-width: var(--tablet-width-min);
     max-width: var(--tablet-width-max);
     padding: 20px 30px;
-    outline: 1px solid greenyellow;
   }
 }
 @media (min-width: 1024px) {
@@ -75,7 +83,6 @@ body {
     min-width: var(--desktop-width-min);
     max-width: var(--desktop-width-max);
     padding: 20px 60px;
-    outline: 1px solid blue;
   }
 }
 .promo {
@@ -100,19 +107,18 @@ body {
 }
 .promo .promo__title {
   width: 100%;
-  border: 1px solid black;
   padding: 0 20px;
-  margin-top: 0;
   margin-bottom: 20px;
-  font: bold 18px / 26px sans-serif;
-  color: yellow;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  margin: 40px auto 60px;
   text-align: center;
+}
+.promo .promo__title span {
+  font-size: smaller;
+  font-weight: normal;
 }
 .promo .promo__img {
   width: calc(50% - 20px);
   max-width: 200px;
-  border: 1px solid black;
   margin-right: 20px;
 }
 .promo .promo__list {
@@ -121,7 +127,6 @@ body {
   align-self: stretch;
   margin-left: 20px;
   margin: 0;
-  border: 1px solid black;
   font-size: 20px;
   list-style: square;
   box-sizing: border-box;
@@ -166,6 +171,7 @@ body {
 @media (min-width: 1024px) {
   .promo .promo__title {
     font-size: 60px;
+    margin-bottom: 60px;
   }
   .promo .promo__img {
     max-width: 400px;
@@ -433,4 +439,120 @@ body {
   color: black;
   background-color: white;
   transition: 0.2s;
+}
+.feedback {
+  background-image: url("../img/bgc_2.jpg");
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.feedback h2 {
+  margin-top: 0;
+  font-size: 40px;
+  text-align: center;
+}
+.feedback h2 span {
+  font-size: 25px;
+  font-weight: normal;
+}
+.feedback p {
+  text-align: center;
+}
+.feedback .feedback__timer {
+  font-size: 50px;
+}
+.feedback .feedback__price {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 20px 50px;
+  margin: 30px auto;
+  border: 1px solid red;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 30px;
+}
+.feedback .feedback__price--old {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+.feedback .feedback__price--new {
+  font-size: 170%;
+  animation: blink 2s linear 3s infinite;
+}
+.feedback form {
+  margin: auto;
+  display: flex;
+}
+.feedback form fieldset {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  border-radius: 5px;
+}
+.feedback form input {
+  width: 100%;
+  padding: 18px 22px 14px;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 700;
+  font: inherit;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.feedback form input:focus,
+.feedback form input:hover,
+.feedback form input:active {
+  color: white;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-color: white;
+  outline: none;
+}
+.feedback form button {
+  padding: 17px 14px;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+}
+.feedback form button:hover,
+.feedback form button:focus {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+.feedback label {
+  position: relative;
+}
+.feedback label > span {
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  right: 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.feedback input:focus + span {
+  display: block;
+  font-size: 20px;
+  color: white;
+  opacity: 1;
+  transition: 0.3s;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
